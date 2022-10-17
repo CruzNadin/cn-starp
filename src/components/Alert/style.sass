@@ -1,0 +1,72 @@
+
+$titleLineHeight: 0.3
+$titleFontSize: 1.2rem
+
+html
+    --titleColor: #41377E
+    --bgOne: #e2dff6
+    --bgTwo: rgba(108,93,211,.3)
+    --bgThree: rgba(108,93,211,.15)
+    background-color: #EDEDED
+
+html[data-theme="dark"]
+    --titleColor: #a79ee5
+    --bgOne: #36335b
+    --bgTwo: #3E396D
+    --bgThree: #242731
+    --bgColor: #1f2128
+    background-color: #1f2128
+
+body
+    margin: 10px 50px
+
+.alert-body
+    position: relative
+    display: flex
+    flex-direction: row
+    width: 100%
+    background-color: var(--bgOne)
+    color: var(--titleColor)
+    padding: 15px
+    border-radius: 15px
+    transition: all .3s ease-in-out
+
+    .alert-icon
+        display: flex
+        justify-content: center
+        padding-right: 10px
+
+    .alert-text
+        display: flex
+        flex-direction: column
+
+    span:nth-child(1)
+        font-weight: bold
+        font-size: $titleFontSize
+        color: inherit
+
+    &:before
+        content: ""
+        z-index: -2
+        left: 0
+        right: 0
+        bottom: -22%
+        margin: 0 13px
+        position: absolute
+        border-radius: 20px
+        height: 100%
+        background: var(--bgTwo)
+        backdrop-filter: blur(.5rem)
+
+    &:after
+        content: ""
+        z-index: -3
+        left: 0
+        right: 0
+        bottom: -38%
+        margin: 0 30px
+        position: absolute
+        border-radius: 15px
+        height: 100%
+        background: var(--bgThree)
+        backdrop-filter: blur(.5rem)
